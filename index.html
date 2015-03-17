@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.8/select2.min.css" rel="stylesheet"></link>
+
+    <meta charset="utf-8">
+
+    <script>
+        $(document).ready(function() {
+            var entries = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
+
+            $("#e1").select2({
+                placeholder: 'Select..',
+                allowClear: true,
+            });
+
+            var old = $('#output').html('');
+            document.onkeypress = function(evt) {
+                evt = evt || window.event
+                key = String.fromCharCode(evt.charCode)
+                if (key) {
+                    var old = $('#output').text();
+                    $('#output').html(old + key);
+                }
+            }
+
+        });
+    </script>
+
+</head>
+<body>
+
+     
+<h1>Input: </h1>
+<form>
+    <select id='e1'>
+        <option>Thurgau (Schweiz)</option>
+    </select>
+</form>
+<h1>Keylogger</h1>
+<p id='output'></p>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+[submodule "php-webdriver"]
+	path = php-webdriver
+	url = https://github.com/facebook/php-webdriver
