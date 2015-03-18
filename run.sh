@@ -10,7 +10,7 @@ if [ ! -f ${SELENIUM_JAR} ]; then
     wget http://selenium-release.storage.googleapis.com/2.45/${SELENIUM_JAR}
 fi
 
-java -jar ${SELENIUM_JAR}
+java -jar ${SELENIUM_JAR} &
 sleep 3 # Give it some time to start
 
 # fetch webdriver
